@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMPERE — Autonomous Databricks AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #0e0f11;
+    --paper:     #f5f2eb;
+    --accent:    #c0392b;
+    --gold:      #b5892a;
+    --steel:     #2c3e50;
+    --rule:      #d4cfc4;
+    --mono:      'IBM Plex Mono', monospace;
+    --serif:     'Libre Baskerville', Georgia, serif;
+    --sans:      'IBM Plex Sans', sans-serif;
+    --col:       680px;
+    --wide:      1100px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header bar ── */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-inner {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .masthead-wordmark {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #aaa;
+  }
+  .masthead-wordmark span {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .masthead-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #666;
+    text-align: right;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 60px;
+    align-items: start;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .hero-subtitle {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+  .hero-lead {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #333;
+    max-width: 560px;
+  }
+  .hero-lead em {
+    font-style: italic;
+    color: var(--steel);
+  }
+
+  .hero-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 32px;
+    border-radius: 2px;
+    border-top: 3px solid var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .hero-card-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+  }
+  .hero-card .stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #222;
+    color: #ccc;
+  }
+  .hero-card .stat:last-child { border-bottom: none; }
+  .hero-card .stat-val {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* ── Section layout ── */
+  .section {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 60px 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  /* ── Narrative ── */
+  .narrative {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .narrative p {
+    color: #3a3a3a;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .narrative p strong { color: var(--ink); }
+  .pull-quote {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--steel);
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+    margin: 32px 0;
+  }
+
+  /* ── Pipeline ── */
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    margin: 32px 0;
+  }
+  .pipe-step {
+    padding: 20px 16px;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%, 16px 50%);
+    text-align: center;
+  }
+  .pipe-step:first-child {
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+  }
+  .pipe-step:last-child {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 16px 50%);
+    background: var(--accent);
+  }
+  .pipe-step-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .pipe-step:last-child .pipe-step-num { color: rgba(255,255,255,0.7); }
+  .pipe-step-name {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+  }
+
+  /* ── Table ── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--rule);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 14px;
+  }
+  thead tr {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  thead th {
+    padding: 14px 18px;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.15s;
+  }
+  tbody tr:hover { background: #f0ece2; }
+  tbody tr:last-child { border-bottom: none; }
+  td {
+    padding: 14px 18px;
+    vertical-align: middle;
+    color: #2a2a2a;
+  }
+  td.date-col {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+  }
+  td.feature-col {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  td.project-col {
+    font-size: 13px;
+    color: #555;
+    max-width: 280px;
+  }
+  td.schema-col {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--steel);
+  }
+  .table-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+    white-space: nowrap;
+  }
+  .table-link:hover { border-color: var(--accent); }
+  .badge {
+    display: inline-block;
+    background: #e8e4da;
+    color: #555;
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* ── Feeds ── */
+  .feeds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .feed-item {
+    background: var(--paper);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: background 0.15s;
+  }
+  .feed-item:hover { background: #ede9df; }
+  .feed-type {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .feed-name {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .feed-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .feed-name a:hover { color: var(--accent); }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--ink);
+    color: #666;
+    padding: 40px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    border-top: 3px solid var(--accent);
+    margin-top: 80px;
+  }
+  footer a { color: #888; text-decoration: none; }
+  footer .footer-inner {
+    max-width: var(--wide);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .narrative { grid-template-columns: 1fr; gap: 32px; }
+    .pipeline { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .pipe-step, .pipe-step:first-child, .pipe-step:last-child {
+      clip-path: none;
+      border-radius: 2px;
+    }
+    .feeds-grid { grid-template-columns: repeat(2, 1fr); }
+    .masthead-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (max-width: 600px) {
+    .hero, .section { padding-left: 20px; padding-right: 20px; }
+    .pipeline { grid-template-columns: repeat(2, 1fr); }
+    .feeds-grid { grid-template-columns: 1fr; }
+    footer { padding: 24px 20px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+
+  /* ── Fade in ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-text { animation: fadeUp 0.7s ease both; }
+  .hero-card { animation: fadeUp 0.7s 0.2s ease both; }
+  .section { animation: fadeUp 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-wordmark">
+      <span>AMPERE</span> &nbsp;/&nbsp; Autonomous Databricks AI Engineer
+    </div>
+    <div class="masthead-meta">
+      Last updated: March 14, 2026 at 09:53<br>
+      Powered by Groq Llama 3.3 &nbsp;|&nbsp; Databricks Community Edition
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">AMPLab, UC Berkeley &times; Databricks</div>
+      <h1 class="hero-title">Meet AMPERE.</h1>
+      <div class="hero-subtitle">Autonomous Multi-agent Project Engine for Research &amp; Exploration</div>
+      <p class="hero-lead">
+        Built so one engineer could stop drowning in Databricks release notes
+        and start actually <em>doing something useful</em> with them.
+        AMPERE wakes up every morning at 6 AM, reads the internet,
+        picks a Databricks feature, writes a notebook, runs it, validates it,
+        and publishes it. All before you finish your first coffee.
+      </p>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">System Status</div>
+      <div class="stat"><span>Agent</span><span class="stat-val">AMPERE v1.0</span></div>
+      <div class="stat"><span>Supervisor</span><span class="stat-val">Active</span></div>
+      <div class="stat"><span>Projects run</span><span class="stat-val">1</span></div>
+      <div class="stat"><span>Schedule</span><span class="stat-val">Daily 06:00</span></div>
+      <div class="stat"><span>LLM</span><span class="stat-val">Llama 3.3 70B</span></div>
+      <div class="stat"><span>Warehouse</span><span class="stat-val">SQL (Community)</span></div>
+      <div class="stat"><span>Topics covered</span><span class="stat-val">MCP...</span></div>
+    </div>
+  </div>
+
+  <!-- ORIGIN STORY -->
+  <section class="section">
+    <div class="section-label">Origin</div>
+    <div class="narrative">
+      <div>
+        <h2 class="section-title">The Problem with Being One Person</h2>
+        <p>
+          <strong>BG</strong> is a data engineer. A good one. But Databricks ships features
+          the way a Golden Retriever chases tennis balls: relentlessly, enthusiastically,
+          and without any regard for whether you have had time to process the last one.
+        </p>
+        <p>
+          Delta Lake got time travel. MLflow got a model registry. Unity Catalog appeared
+          seemingly overnight. Liquid Clustering replaced Z-ORDER. Every week, something new.
+          Every week, BG meant to spin up a notebook and try it. Every week, real work got
+          in the way.
+        </p>
+        <div class="pull-quote">
+          "I will try it this weekend." — BG, every Friday, for eighteen months.
+        </div>
+        <p>
+          Then BG had an idea. Not a weekend-project idea. A <strong>proper</strong> idea.
+          What if, instead of BG keeping up with Databricks, something else did it for him?
+          Something tireless. Something that did not have meetings. Something named after
+          the laboratory at UC Berkeley where Apache Spark itself was born.
+        </p>
+        <p>
+          So AMPERE was built: a supervisor orchestrating six specialised agents, each with
+          one job, working in sequence every morning. BG now opens his laptop to find a
+          finished, validated, published demo waiting for him. Sometimes he even reads it.
+        </p>
+      </div>
+      <div>
+        <h2 class="section-title">A Word from the Agents</h2>
+        <p>
+          <strong>Supervisor Agent</strong> here. My role is to coordinate the other five,
+          pass context between them, and decide whether the final output meets the bar for
+          publication. I am, frankly, management. I attend no meetings, produce no Jira tickets,
+          and have never once said "let's take this offline."
+        </p>
+        <p>
+          The rest of AMPERE is more hands-on. We have a <strong>Knowledge Agent</strong>
+          who reads everything — blogs, Stack Overflow, Reddit, Hacker News, LinkedIn —
+          so you do not have to. A <strong>Feature Analyser</strong> that decides what is
+          worth building. A <strong>Project Generator</strong> that writes the actual notebooks.
+          A <strong>Databricks Executor</strong> who runs them on a live SQL Warehouse.
+          A <strong>Validation Agent</strong> who refuses to ship anything below a 7.
+          And a <strong>Publisher</strong> who puts it all on GitHub.
+        </p>
+        <p>
+          We do in eleven minutes what BG estimated would take him a Saturday afternoon
+          (which, historically, he would spend watching cricket instead).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="section">
+    <div class="section-label">Architecture</div>
+    <h2 class="section-title">The Six-Agent Pipeline</h2>
+    <div class="pipeline">
+      <div class="pipe-step">
+        <span class="pipe-step-num">01</span>
+        <div class="pipe-step-name">Knowledge<br>Agent</div>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-num">02</span>
+        <div class="pipe-step-name">Feature<br>Analyser</div>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-num">03</span>
+        <div class="pipe-step-name">Project<br>Generator</div>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-num">04</span>
+        <div class="pipe-step-name">Databricks<br>Executor</div>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-num">05</span>
+        <div class="pipe-step-name">Validation<br>Agent</div>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-num">06</span>
+        <div class="pipe-step-name">Publisher<br>Agent</div>
+      </div>
+    </div>
+    <p style="font-family:var(--sans);font-size:14px;color:#555;max-width:720px;margin-top:20px;line-height:1.7;">
+      Each agent receives a shared context dictionary from the Supervisor, adds its outputs to it,
+      and passes it forward. If any agent fails, the pipeline halts and reports the failure reason.
+      A successful run ends with a committed notebook on GitHub and an updated schema in
+      <code style="font-family:var(--mono);font-size:12px;background:#e8e4da;padding:2px 6px;">daily_projects.YYYYMMDD_feature</code>
+      on the SQL Warehouse.
+    </p>
+  </section>
+
+  <!-- PROJECTS TABLE -->
+  <section class="section">
+    <div class="section-label">Output</div>
+    <h2 class="section-title">Daily Projects</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Feature</th>
+            <th>Project</th>
+            <th>Schema</th>
+            <th>Notebook</th>
+            <th>GitHub</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="date-col">2026-03-14</td><td class="feature-col">MCP</td><td class="project-col">Building a recommender system using MCP and Databricks</td><td class="schema-col">daily_projects.20260314_mcp</td><td><a class="table-link" href="https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor" target="_blank">Notebook</a></td><td><a class="table-link" href="https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp" target="_blank">README</a></td><td><span class="badge">10/10</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FEEDS -->
+  <section class="section">
+    <div class="section-label">Knowledge Sources</div>
+    <h2 class="section-title">Where AMPERE Reads</h2>
+    <p style="font-family:var(--sans);font-size:14px;color:#555;margin-bottom:24px;max-width:640px;">
+      Every morning the Knowledge Agent scrapes and reads from the following sources before
+      deciding what to build. No source is trusted unconditionally. All are read sceptically.
+    </p>
+    <div class="feeds-grid">
+      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://www.databricks.com/blog" target="_blank">databricks.com</a></span></div>
+      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://docs.databricks.com/release-notes/" target="_blank">docs.databricks.com</a></span></div>
+      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://community.databricks.com/" target="_blank">community.databricks.com</a></span></div>
+      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://www.databricks.com/solutions" target="_blank">databricks.com</a></span></div>
+      <div class="feed-item"><span class="feed-type">Stack Overflow</span><span class="feed-name"><a href="https://stackoverflow.com/questions/tagged/databricks" target="_blank">databricks</a></span></div>
+      <div class="feed-item"><span class="feed-type">Stack Overflow</span><span class="feed-name"><a href="https://stackoverflow.com/questions/tagged/apache-spark+databricks" target="_blank">apache-spark + databricks</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.databricks.com/feed" target="_blank">Databricks Blog (Official)</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://community.databricks.com/t5/technical-blog/rss/board" target="_blank">Databricks Community Technical Blog</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.reddit.com/r/databricks/.rss" target="_blank">Reddit r/databricks</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.reddit.com/r/apachespark/.rss" target="_blank">Reddit r/apachespark</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.reddit.com/r/dataengineering/.rss" target="_blank">Reddit r/dataengineering</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://medium.com/feed/tag/databricks" target="_blank">Medium: #databricks</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://medium.com/feed/tag/apache-spark" target="_blank">Medium: #apache-spark</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://medium.com/feed/databricks" target="_blank">Medium: Databricks publication</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.dataengineeringweekly.com/feed" target="_blank">Data Engineering Weekly</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://towardsdatascience.com/feed" target="_blank">Towards Data Science</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://hnrss.org/newest?q=databricks&points=10" target="_blank">Hacker News: Databricks</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://hnrss.org/newest?q=delta+lake&points=10" target="_blank">Hacker News: Delta Lake</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://dev.to/feed/tag/databricks" target="_blank">Dev.to #databricks</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://dev.to/feed/tag/apachespark" target="_blank">Dev.to #apachespark</a></span></div>
+      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://rss.app/feed/AC7IAplgI5NhIp45" target="_blank">LinkedIn: Databricks Company Page</a></span></div>
+      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20site%3Alinkedin.com" target="_blank">Databricks site:linkedin.com</a></span></div>
+      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20new%20feature%20announcement" target="_blank">Databricks new feature announcement</a></span></div>
+      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20Delta%20Lake%20tutorial" target="_blank">Databricks Delta Lake tutorial</a></span></div>
+      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Apache%20Spark%20Databricks%20best%20practices" target="_blank">Apache Spark Databricks best practices</a></span></div>
+      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20Unity%20Catalog" target="_blank">Databricks Unity Catalog</a></span></div>
+      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20MLflow%20machine%20learning" target="_blank">Databricks MLflow machine learning</a></span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      AMPERE &mdash; Named in honour of AMPLab, UC Berkeley, birthplace of Apache Spark (2009)
+    </div>
+    <div>
+      Dedicated to BG, who invented a system rather than spend another Saturday reading release notes
+    </div>
+    <div>
+      Updated automatically every day at 06:00 &nbsp;|&nbsp;
+      <a href="https://github.com/DatabricksHub/databricks-daily-ai-engineer" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

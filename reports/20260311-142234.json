@@ -1,0 +1,29 @@
+{
+  "run_id": "20260311-142234",
+  "started_at": "2026-03-11T14:22:34",
+  "finished_at": "2026-03-11T14:22:57",
+  "total_duration_s": 23.69534669999848,
+  "overall_success": false,
+  "feature": "",
+  "project_idea": "",
+  "github_url": "",
+  "run_url": "",
+  "quality_score": 0,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 6.75868840000112,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": false,
+      "duration_s": 16.834390600000916,
+      "error": "Error code: 400 - {'error': {'message': 'The model `llama3-70b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}",
+      "skipped": false
+    }
+  ],
+  "failure_reason": "Feature Analyzer: Error code: 400 - {'error': {'message': 'The model `llama3-70b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}"
+}

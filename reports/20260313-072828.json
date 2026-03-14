@@ -1,0 +1,36 @@
+{
+  "run_id": "20260313-072828",
+  "started_at": "2026-03-13T07:28:28",
+  "finished_at": "2026-03-13T07:28:54",
+  "total_duration_s": 25.93024560000049,
+  "overall_success": false,
+  "feature": "Databricks Unity Catalog",
+  "project_idea": "Building a unified data governance dashboard using Databricks Unity Catalog to track data lineage and quality metrics",
+  "github_url": "",
+  "run_url": "",
+  "quality_score": 0,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 23.377239800000098,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": true,
+      "duration_s": 2.4562896999996156,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Project Generator",
+      "success": false,
+      "duration_s": 0.0012784000136889517,
+      "error": "name 'date_str' is not defined",
+      "skipped": false
+    }
+  ],
+  "failure_reason": "Project Generator: name 'date_str' is not defined"
+}

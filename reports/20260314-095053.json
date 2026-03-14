@@ -1,0 +1,64 @@
+{
+  "run_id": "20260314-095053",
+  "started_at": "2026-03-14T09:50:53",
+  "finished_at": "2026-03-14T09:53:20",
+  "total_duration_s": 146.95543740002904,
+  "overall_success": true,
+  "feature": "MCP",
+  "project_idea": "Building a recommender system using MCP and Databricks",
+  "github_url": "https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp",
+  "run_url": "https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor",
+  "quality_score": 10,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 51.2534826999763,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": true,
+      "duration_s": 4.37910560000455,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Project Generator",
+      "success": true,
+      "duration_s": 11.442234199959785,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Databricks Executor",
+      "success": true,
+      "duration_s": 67.96439059998374,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Validation Agent",
+      "success": true,
+      "duration_s": 2.2185137000051327,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Publisher Agent",
+      "success": true,
+      "duration_s": 9.679645899974275,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Page Generator",
+      "success": true,
+      "duration_s": 0.016026000026613474,
+      "error": "",
+      "skipped": false
+    }
+  ],
+  "failure_reason": ""
+}

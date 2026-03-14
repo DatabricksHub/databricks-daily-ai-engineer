@@ -1,0 +1,43 @@
+{
+  "run_id": "20260311-173606",
+  "started_at": "2026-03-11T17:36:06",
+  "finished_at": "2026-03-11T17:37:20",
+  "total_duration_s": 73.68154250000225,
+  "overall_success": false,
+  "feature": "Databricks Partner Connect",
+  "project_idea": "Integrating a third-party data source using Databricks Partner Connect for real-time analytics",
+  "github_url": "",
+  "run_url": "",
+  "quality_score": 0,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 12.343963899998926,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": true,
+      "duration_s": 2.0874875000008615,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Project Generator",
+      "success": true,
+      "duration_s": 6.651930600004562,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Databricks Executor",
+      "success": false,
+      "duration_s": 9.562216300000728,
+      "error": "Run state: FAILED \u2014 [Cell 1 | original=sql]\n-- Imports necessary libraries and configures the environment\n['Setup complete']\n\n[Cell 2 | original=sql]\n-- Creates a sample table with data\n\nOperation not allowed: Schema may not be specified in a Replace Table As Select (RTAS) statement.\n== SQL (line 1, position 1) ==\nCREA",
+      "skipped": false
+    }
+  ],
+  "failure_reason": "Databricks Executor: Run state: FAILED \u2014 [Cell 1 | original=sql]\n-- Imports necessary libraries and configures the environment\n['Setup complete']\n\n[Cell 2 | original=sql]\n-- Creates a sample table with data\n\nOperation not allowed: Schema may not be specified in a Replace Table As Select (RTAS) statement.\n== SQL (line 1, position 1) ==\nCREA"
+}

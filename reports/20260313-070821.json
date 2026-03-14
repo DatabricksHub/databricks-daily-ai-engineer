@@ -1,0 +1,36 @@
+{
+  "run_id": "20260313-070821",
+  "started_at": "2026-03-13T07:08:21",
+  "finished_at": "2026-03-13T07:08:39",
+  "total_duration_s": 18.112214799999492,
+  "overall_success": false,
+  "feature": "Lakebase",
+  "project_idea": "Building a real-time analytics dashboard using Lakebase and Databricks SQL",
+  "github_url": "",
+  "run_url": "",
+  "quality_score": 0,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 15.081160200003069,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": true,
+      "duration_s": 2.8241364999848884,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Project Generator",
+      "success": false,
+      "duration_s": 0.03134729998419061,
+      "error": "'Config' object has no attribute 'databricks_http_path'",
+      "skipped": false
+    }
+  ],
+  "failure_reason": "Project Generator: 'Config' object has no attribute 'databricks_http_path'"
+}

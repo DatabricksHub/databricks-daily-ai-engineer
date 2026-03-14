@@ -1,0 +1,36 @@
+{
+  "run_id": "20260311-144528",
+  "started_at": "2026-03-11T14:45:28",
+  "finished_at": "2026-03-11T14:45:39",
+  "total_duration_s": 10.923449699999765,
+  "overall_success": false,
+  "feature": "Generative AI",
+  "project_idea": "Building a chatbot using Databricks' Generative AI capabilities to provide automated customer support",
+  "github_url": "",
+  "run_url": "",
+  "quality_score": 0,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 7.129349400005594,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": true,
+      "duration_s": 1.9365489000047091,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Project Generator",
+      "success": false,
+      "duration_s": 1.8545110000050045,
+      "error": "'charmap' codec can't encode character '\\u2705' in position 2319: character maps to <undefined>",
+      "skipped": false
+    }
+  ],
+  "failure_reason": "Project Generator: 'charmap' codec can't encode character '\\u2705' in position 2319: character maps to <undefined>"
+}

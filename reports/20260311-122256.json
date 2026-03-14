@@ -1,0 +1,29 @@
+{
+  "run_id": "20260311-122256",
+  "started_at": "2026-03-11T12:22:56",
+  "finished_at": "2026-03-11T12:23:04",
+  "total_duration_s": 7.726410300001589,
+  "overall_success": false,
+  "feature": "",
+  "project_idea": "",
+  "github_url": "",
+  "run_url": "",
+  "quality_score": 0,
+  "agent_results": [
+    {
+      "agent": "Knowledge Agent",
+      "success": true,
+      "duration_s": 6.812911800003349,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "agent": "Feature Analyzer",
+      "success": false,
+      "duration_s": 0.688774199999898,
+      "error": "GROQ_API_KEY not set.\n1. Sign up FREE at console.groq.com\n2. export GROQ_API_KEY=gsk_...",
+      "skipped": false
+    }
+  ],
+  "failure_reason": "Feature Analyzer: GROQ_API_KEY not set.\n1. Sign up FREE at console.groq.com\n2. export GROQ_API_KEY=gsk_..."
+}

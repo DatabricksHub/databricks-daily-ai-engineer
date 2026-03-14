@@ -1,0 +1,13 @@
+============================================ 
+AMPERE run started: 14-03-2026  9:46:06.09           
+============================================ 
+Traceback (most recent call last):
+  File "D:\Project\Databricks-Projects\databricks-ai-engineer\main.py", line 30, in <module>
+    print(f"\u2705 Loaded environment from {env_path}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+Run FAILED with error code 1:  9:46:15.53 
+ 

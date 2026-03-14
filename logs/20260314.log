@@ -1,0 +1,135 @@
+============================================ 
+AMPERE run started: 14-03-2026  9:50:14.32           
+============================================ 
+[OK] Loaded environment from D:\Project\Databricks-Projects\databricks-ai-engineer\.env
+[1m09:50:53[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Supervisor initialised | agents=7 | dry_run=False | max_retries=1
+[1m09:50:53[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ============================================================
+[1m09:50:53[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Pipeline started  |  run_id=20260314-095053
+[1m09:50:53[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ============================================================
+[1m09:50:53[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:50:53[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Scraping official Databricks sources …
+[1m09:50:58[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://www.databricks.com/blog → 5 articles
+[1m09:50:59[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://docs.databricks.com/release-notes/ → 0 articles
+[1m09:51:02[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://community.databricks.com/ → 5 articles
+[1m09:51:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://www.databricks.com/solutions → 2 articles
+[1m09:51:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Scraping Stack Overflow …
+[1m09:51:05[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://stackoverflow.com/questions/tagged/databricks → 5 questions
+[1m09:51:06[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://stackoverflow.com/questions/tagged/apache-spark+databricks → 0 questions
+[1m09:51:06[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Scraping Reddit …
+[1m09:51:06[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Scraping Medium & TDS …
+[1m09:51:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   https://towardsdatascience.com/tagged/databricks → 5 articles
+[1m09:51:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Scraping Google News …
+[1m09:51:09[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Google News 'Databricks site:linkedin.com' → 5 results
+[1m09:51:10[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Google News 'Databricks new feature announcement' → 5 results
+[1m09:51:10[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Google News 'Databricks Delta Lake tutorial' → 5 results
+[1m09:51:11[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Google News 'Apache Spark Databricks best practices' → 5 results
+[1m09:51:12[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Google News 'Databricks Unity Catalog' → 5 results
+[1m09:51:13[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Google News 'Databricks MLflow machine learning' → 5 results
+[1m09:51:13[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Reading 15 RSS feeds …
+[1m09:51:16[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Databricks Blog (Official)' → 5 items
+[1m09:51:18[0m [33m[WARNING ][0m [34m[Page Generator           ][0m RSS feed failed (https://community.databricks.com/t5/technical-blog/rss/board): 404 Client Error: Not Found for url: https://community.databricks.com/t5/technical-blog/rss/board
+[1m09:51:18[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Databricks Community Technical Blog' → 0 items
+[1m09:51:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Reddit r/databricks' → 5 items
+[1m09:51:22[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Reddit r/apachespark' → 5 items
+[1m09:51:23[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Reddit r/dataengineering' → 5 items
+[1m09:51:24[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Medium: #databricks' → 5 items
+[1m09:51:25[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Medium: #apache-spark' → 5 items
+[1m09:51:25[0m [33m[WARNING ][0m [34m[Page Generator           ][0m RSS feed failed (https://medium.com/feed/databricks): 404 Client Error: Not Found for url: https://medium.com/feed/databricks
+[1m09:51:25[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Medium: Databricks publication' → 0 items
+[1m09:51:26[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Data Engineering Weekly' → 5 items
+[1m09:51:28[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Towards Data Science' → 5 items
+[1m09:51:37[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Hacker News: Databricks' → 5 items
+[1m09:51:39[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Hacker News: Delta Lake' → 5 items
+[1m09:51:41[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Dev.to #databricks' → 5 items
+[1m09:51:43[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'Dev.to #apachespark' → 5 items
+[1m09:51:45[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   RSS 'LinkedIn: Databricks Company Page' → 0 items
+[1m09:51:45[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Total collected: 112 articles from 4 source types
+[1m09:51:45[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 51.3s
+[1m09:51:45[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:51:45[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Analysing 112 articles. Already demonstrated: 8 features.
+[1m09:51:45[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Using provider: groq
+[1m09:51:49[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Groq response: ~42 words
+[1m09:51:49[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m History saved (9 entries) → history.json
+[1m09:51:49[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Selected feature: 'MCP' — Building a recommender system using MCP and Databricks
+[1m09:51:49[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 4.4s
+[1m09:51:49[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:51:49[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Project directory: projects\20260314-mcp
+[1m09:51:49[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Generating notebook.py …
+[1m09:51:49[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Using provider: groq
+[1m09:51:52[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Groq response: ~228 words
+[1m09:51:52[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Written → projects\20260314-mcp\notebook.py (1806 chars)
+[1m09:51:52[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Generating queries.sql …
+[1m09:51:52[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Using provider: groq
+[1m09:51:57[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Groq response: ~312 words
+[1m09:51:57[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Written → projects\20260314-mcp\queries.sql (2319 chars)
+[1m09:51:57[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Generating README.md …
+[1m09:51:57[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Using provider: groq
+[1m09:52:00[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Groq response: ~356 words
+[1m09:52:00[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Written → projects\20260314-mcp\README.md (2596 chars)
+[1m09:52:00[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 11.4s
+[1m09:52:00[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:52:00[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Creating workspace folder: /Shared/AI_Engineer_Demos/20260314-mcp
+[1m09:52:02[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Uploading notebook → /Shared/AI_Engineer_Demos/20260314-mcp/notebook
+[1m09:52:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m SQL Warehouse mode: HTTP path = /sql/1.0/warehouses/b20c8590cbf52377
+[1m09:52:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Execution mode: sql_warehouse
+[1m09:52:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Running via SQL Warehouse with LLM cell parser …
+[1m09:52:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Warehouse ID: b20c8590cbf52377
+[1m09:52:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Extracted 7 cells — sending to LLM for analysis …
+[1m09:52:04[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Project schema: daily_projects.20260314_mcp
+[1m09:52:04[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Using provider: groq
+[1m09:52:06[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Groq response: ~206 words
+[1m09:52:06[0m [32m[INFO    ][0m [34m[Page Generator           ][0m LLM successfully classified 7 cells
+[1m09:52:06[0m [32m[INFO    ][0m [34m[Page Generator           ][0m LLM processed 7 cells
+[1m09:52:06[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 1/7 [SQL → SQL]: Create project schema with the correct naming convention …
+[1m09:52:31[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 2/7 [SQL → SQL]: Set default schema context to the newly created schema …
+[1m09:52:34[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 3/7 [SQL → SQL]: Create table with column definitions …
+[1m09:52:41[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 4/7 [SQL → SQL]: Insert sample data into the table …
+[1m09:52:56[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 5/7 [SQL → SQL]: Calculate average rating per user using window functions …
+[1m09:53:01[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 6/7 [SQL → SQL]: Find top 3 products with highest average rating …
+[1m09:53:05[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Cell 7/7 [SQL → SQL]: Final validation and count of rows in the table …
+[1m09:53:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Execution finished — state: SUCCESS
+[1m09:53:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 68.0s
+[1m09:53:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:53:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Validating run for 'MCP' (state=SUCCESS)
+[1m09:53:08[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Asking LLM to analyse run output …
+[1m09:53:08[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Using provider: groq
+[1m09:53:11[0m [36m[DEBUG   ][0m [34m[Page Generator           ][0m Groq response: ~55 words
+[1m09:53:11[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Quality score 10/10 with no blocking issues — overriding to PASS
+[1m09:53:11[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Demo validated (quality=10/10) — The Databricks SQL Warehouse execution was successful, with all cells executing 
+[1m09:53:11[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 2.2s
+[1m09:53:11[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:53:11[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Uploading → projects/20260314-mcp/notebook.py
+[1m09:53:13[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Uploading → projects/20260314-mcp/queries.sql
+[1m09:53:15[0m [32m[INFO    ][0m [34m[Page Generator           ][0m   Uploading → projects/20260314-mcp/README.md
+[1m09:53:19[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Updating PROJECTS.md index …
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Published → https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Commit    → https://github.com/DatabricksHub/databricks-daily-ai-engineer/commit/f3fc828dc785644964c76545cb9adcaaf0a18f94
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 9.7s
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ▶  Starting
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Landing page written → D:\Project\Databricks-Projects\databricks-ai-engineer\index.html
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m ✅ Completed in 0.0s
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m 
+======================================================================
+  PIPELINE REPORT  —  ✅ SUCCESS
+======================================================================
+  Run ID          : 20260314-095053
+  Feature         : MCP
+  Project         : Building a recommender system using MCP and Databricks
+  Quality Score   : 10/10
+  Duration        : 147.0s
+  Databricks Run  : https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor
+  GitHub URL      : https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp
+
+  Agent Results:
+    ✅  Knowledge Agent                 51.3s  
+    ✅  Feature Analyzer                4.4s  
+    ✅  Project Generator               11.4s  
+    ✅  Databricks Executor             68.0s  
+    ✅  Validation Agent                2.2s  
+    ✅  Publisher Agent                 9.7s  
+    ✅  Page Generator                  0.0s  
+======================================================================
+
+[1m09:53:20[0m [32m[INFO    ][0m [34m[Page Generator           ][0m Report saved → reports\20260314-095053.json
+Run completed successfully:  9:53:21.10 
+ 

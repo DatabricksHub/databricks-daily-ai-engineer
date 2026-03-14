@@ -1,0 +1,12 @@
+[
+  {
+    "date": "20260314",
+    "feature": "MCP",
+    "project_idea": "Building a recommender system using MCP and Databricks",
+    "schema": "daily_projects.20260314_mcp",
+    "notebook_url": "https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor",
+    "github_url": "https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp",
+    "quality_score": 10,
+    "summary": "The Databricks SQL Warehouse execution was successful, with all cells executing as expected and producing meaningful output. The demonstration of the MCP feature was clear and effective, with the final validation and count of rows in the table confirming the success of the execution."
+  }
+]
