@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMPERE — Autonomous Databricks AI Engineer</title>
+<title>SPARK — DatabricksHub Knowledge Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink:       #0e0f11;
-    --paper:     #f5f2eb;
-    --accent:    #c0392b;
-    --gold:      #b5892a;
-    --steel:     #2c3e50;
-    --rule:      #d4cfc4;
-    --mono:      'IBM Plex Mono', monospace;
-    --serif:     'Libre Baskerville', Georgia, serif;
-    --sans:      'IBM Plex Sans', sans-serif;
-    --col:       680px;
-    --wide:      1100px;
+    --ink:    #0e0f11;
+    --paper:  #f5f2eb;
+    --accent: #c0392b;
+    --gold:   #b5892a;
+    --steel:  #2c3e50;
+    --muted:  #6b6b6b;
+    --rule:   #d4cfc4;
+    --mono:   'IBM Plex Mono', monospace;
+    --serif:  'Libre Baskerville', Georgia, serif;
+    --sans:   'IBM Plex Sans', sans-serif;
+    --wide:   1140px;
   }
 
   html { scroll-behavior: smooth; }
@@ -29,276 +29,302 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--serif);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Header bar ── */
+  /* ── Masthead ── */
   .masthead {
     background: var(--ink);
-    color: var(--paper);
-    padding: 0;
-    border-bottom: 3px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
   }
   .masthead-inner {
     max-width: var(--wide);
     margin: 0 auto;
-    padding: 18px 40px;
+    padding: 14px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .masthead-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   .masthead-wordmark {
     font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 0.18em;
+    font-size: 15px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #aaa;
-  }
-  .masthead-wordmark span {
-    color: var(--accent);
+    color: var(--paper);
     font-weight: 500;
+    white-space: nowrap;
+  }
+  .masthead-wordmark span { color: var(--accent); }
+  .masthead-divider { width: 1px; height: 18px; background: #333; }
+  .masthead-subtitle {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
   }
   .masthead-meta {
     font-family: var(--mono);
-    font-size: 11px;
-    color: #666;
+    font-size: 10px;
+    color: #aaa;
     text-align: right;
+    line-height: 1.7;
+    white-space: nowrap;
   }
+
+  /* ── Nav ── */
+  .nav {
+    background: #1a1c1f;
+    border-bottom: 1px solid #2a2c2f;
+    overflow-x: auto;
+  }
+  .nav-inner {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    white-space: nowrap;
+  }
+  .nav a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #bbb;
+    text-decoration: none;
+    padding: 11px 18px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .nav a:hover { color: var(--paper); border-color: var(--accent); }
 
   /* ── Hero ── */
   .hero {
     max-width: var(--wide);
     margin: 0 auto;
-    padding: 80px 40px 60px;
+    padding: 64px 40px 48px;
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 60px;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
     align-items: start;
   }
   .hero-eyebrow {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   .hero-title {
-    font-size: clamp(42px, 5vw, 68px);
+    font-size: clamp(36px, 5vw, 62px);
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-  .hero-subtitle {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    margin-bottom: 28px;
-  }
-  .hero-lead {
-    font-size: 19px;
-    line-height: 1.7;
-    color: #333;
-    max-width: 560px;
-  }
-  .hero-lead em {
-    font-style: italic;
-    color: var(--steel);
-  }
-
-  .hero-card {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 32px;
-    border-radius: 2px;
-    border-top: 3px solid var(--accent);
+  .hero-tagline {
     font-family: var(--mono);
     font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+  }
+  .hero-lead {
+    font-size: 16px;
     line-height: 1.8;
+    color: #3a3a3a;
+    max-width: 580px;
   }
-  .hero-card-title {
-    font-size: 10px;
-    letter-spacing: 0.2em;
+  .hero-lead + .hero-lead { margin-top: 12px; }
+  .hero-lead em { font-style: italic; color: var(--steel); }
+
+  /* ── Status card ── */
+  .status-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 26px;
+    border-top: 3px solid var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.8;
+    position: sticky;
+    top: 20px;
+  }
+  .status-card-title {
+    font-size: 9px;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #888;
-    margin-bottom: 16px;
+    color: #aaa;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
   }
-  .hero-card .stat {
+  .stat {
     display: flex;
     justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid #222;
+    padding: 5px 0;
+    border-bottom: 1px solid #2a2a2a;
     color: #ccc;
   }
-  .hero-card .stat:last-child { border-bottom: none; }
-  .hero-card .stat-val {
-    color: var(--gold);
-    font-weight: 500;
-  }
+  .stat:last-child { border-bottom: none; }
+  .stat-val { color: var(--gold); font-weight: 500; }
 
-  /* ── Section layout ── */
+  /* ── Sections ── */
   .section {
     max-width: var(--wide);
     margin: 0 auto;
-    padding: 60px 40px;
-    border-top: 1px solid var(--rule);
+    padding: 52px 40px 48px;
   }
-  .section-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  .section + .section {
+    padding-top: 48px;
   }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
+
+  .intro-grid .section-title {
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
   }
+
   .section-title {
-    font-size: 32px;
+    font-size: clamp(36px, 4vw, 58px);
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 20px;
-    line-height: 1.2;
-  }
-
-  /* ── Narrative ── */
-  .narrative {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-  .narrative p {
-    color: #3a3a3a;
-    margin-bottom: 16px;
-    font-size: 16px;
-  }
-  .narrative p strong { color: var(--ink); }
-  .pull-quote {
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.5;
-    color: var(--steel);
-    border-left: 3px solid var(--accent);
-    padding-left: 24px;
-    margin: 32px 0;
-  }
-
-  /* ── Pipeline ── */
-  .pipeline {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
-    margin: 32px 0;
-  }
-  .pipe-step {
-    padding: 20px 16px;
-    background: var(--ink);
-    color: var(--paper);
-    position: relative;
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%, 16px 50%);
+    line-height: 1.05;
     text-align: center;
   }
-  .pipe-step:first-child {
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+
+  /* ── Agents section: two columns ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
   }
-  .pipe-step:last-child {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 16px 50%);
-    background: var(--accent);
+  .intro-body p {
+    font-size: 15px;
+    color: #3a3a3a;
+    margin-bottom: 14px;
+    line-height: 1.8;
+    text-align: left;
   }
-  .pipe-step-num {
+  .intro-body p strong { color: var(--ink); }
+  .pull-quote {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--steel);
+    border-left: 3px solid var(--accent);
+    padding: 10px 0 10px 22px;
+    margin: 22px 0;
+    text-align: left;
+  }
+
+  /* ── Agent flow diagram ── */
+  .agent-flow { display: flex; flex-direction: column; }
+  .agent-node {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0;
+  }
+  .agent-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .agent-num {
+    width: 40px;
+    height: 40px;
+    background: var(--steel);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  /* Publisher is the final step — use gold, not red */
+  .agent-node:last-child .agent-num {
+    background: var(--gold);
+    color: var(--ink);
+  }
+  .agent-line {
+    width: 2px;
+    flex: 1;
+    background: var(--rule);
+    min-height: 16px;
+  }
+  .agent-node:last-child .agent-line { display: none; }
+  .agent-body { padding: 10px 0 22px 18px; }
+  .agent-name {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .agent-desc {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .agent-output {
     font-family: var(--mono);
     font-size: 10px;
-    color: #888;
-    letter-spacing: 0.15em;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .pipe-step:last-child .pipe-step-num { color: rgba(255,255,255,0.7); }
-  .pipe-step-name {
-    font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    line-height: 1.3;
+    color: var(--gold);
+    margin-top: 5px;
   }
 
   /* ── Table ── */
   .table-wrap {
     overflow-x: auto;
-    margin: 24px 0;
     border: 1px solid var(--rule);
+    margin-top: 16px;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--sans);
-    font-size: 14px;
-  }
-  thead tr {
-    background: var(--ink);
-    color: var(--paper);
-  }
+  table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 13px; }
+  thead tr { background: var(--ink); color: var(--paper); }
   thead th {
-    padding: 14px 18px;
+    padding: 11px 14px;
     text-align: left;
     font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 9px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
     white-space: nowrap;
   }
-  tbody tr {
-    border-bottom: 1px solid var(--rule);
-    transition: background 0.15s;
-  }
-  tbody tr:hover { background: #f0ece2; }
+  tbody tr { border-bottom: 1px solid var(--rule); transition: background 0.12s; }
   tbody tr:last-child { border-bottom: none; }
-  td {
-    padding: 14px 18px;
-    vertical-align: middle;
-    color: #2a2a2a;
-  }
-  td.date-col {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: #888;
-    white-space: nowrap;
-  }
-  td.feature-col {
-    font-weight: 600;
-    color: var(--ink);
-  }
-  td.project-col {
-    font-size: 13px;
-    color: #555;
-    max-width: 280px;
-  }
-  td.schema-col {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--steel);
-  }
+  tbody tr:hover { background: #ede9df; }
+  td { padding: 11px 14px; vertical-align: middle; color: #2a2a2a; }
+  td.date-col  { font-family: var(--mono); font-size: 11px; color: #888; white-space: nowrap; }
+  td.feature-col { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  td.project-col { font-size: 12px; color: #555; }
+  td.schema-col  { font-family: var(--mono); font-size: 10px; color: var(--steel); white-space: nowrap; }
   .table-link {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     color: var(--accent);
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.15s;
+    transition: border-color 0.12s;
     white-space: nowrap;
   }
   .table-link:hover { border-color: var(--accent); }
@@ -307,313 +333,514 @@
     background: #e8e4da;
     color: #555;
     font-family: var(--mono);
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 2px;
+    font-size: 9px;
+    padding: 2px 7px;
   }
 
-  /* ── Feeds ── */
-  .feeds-grid {
+  /* ── Feeds grid (below projects, full width) ── */
+  .feeds-cats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+  }
+  .feeds-cat-title {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--rule);
+    text-align: left;
+  }
+  .feed-link {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--steel);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px solid #ede9df;
+    line-height: 1.45;
+    transition: color 0.12s;
+  }
+  .feed-link:last-child { border-bottom: none; }
+  .feed-link:hover { color: var(--accent); }
+
+  /* ── Docs grid ── */
+  .docs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
-    margin: 24px 0;
+    margin-top: 24px;
   }
-  .feed-item {
-    background: var(--paper);
-    padding: 20px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    transition: background 0.15s;
-  }
-  .feed-item:hover { background: #ede9df; }
-  .feed-type {
-    font-family: var(--mono);
+  .doc-card { background: var(--paper); padding: 20px 22px; transition: background 0.12s; }
+  .doc-card:hover { background: #ede9df; }
+  .doc-cat {
+    font-family: var(--sans);
     font-size: 9px;
-    letter-spacing: 0.2em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--gold);
+    margin-bottom: 8px;
   }
-  .feed-name {
+  .doc-link {
+    display: block;
     font-family: var(--sans);
     font-size: 13px;
-    font-weight: 600;
     color: var(--ink);
-  }
-  .feed-name a {
-    color: inherit;
     text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 4px;
+    transition: color 0.12s;
   }
-  .feed-name a:hover { color: var(--accent); }
+  .doc-link:hover { color: var(--accent); }
+  .doc-desc { font-family: var(--sans); font-size: 11px; color: var(--muted); line-height: 1.55; }
 
   /* ── Footer ── */
   footer {
     background: var(--ink);
-    color: #666;
-    padding: 40px;
-    text-align: center;
+    color: #555;
+    padding: 28px 40px;
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.05em;
     border-top: 3px solid var(--accent);
     margin-top: 80px;
   }
-  footer a { color: #888; text-decoration: none; }
-  footer .footer-inner {
+  .footer-inner {
     max-width: var(--wide);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
   }
+  footer a { color: #777; text-decoration: none; }
+  footer a:hover { color: var(--paper); }
 
   /* ── Responsive ── */
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-card { display: none; }
-    .narrative { grid-template-columns: 1fr; gap: 32px; }
-    .pipeline { grid-template-columns: repeat(3, 1fr); gap: 4px; }
-    .pipe-step, .pipe-step:first-child, .pipe-step:last-child {
-      clip-path: none;
-      border-radius: 2px;
-    }
-    .feeds-grid { grid-template-columns: repeat(2, 1fr); }
-    .masthead-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .status-card { display: none; }
+    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .feeds-cats { grid-template-columns: repeat(2, 1fr); }
+    .docs-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
     .hero, .section { padding-left: 20px; padding-right: 20px; }
-    .pipeline { grid-template-columns: repeat(2, 1fr); }
-    .feeds-grid { grid-template-columns: 1fr; }
-    footer { padding: 24px 20px; }
-    .footer-inner { flex-direction: column; text-align: center; }
+    .masthead-inner { padding: 12px 20px; }
+    .masthead-subtitle { display: none; }
+    .nav-inner { padding: 0 20px; }
+    .feeds-cats { grid-template-columns: 1fr; }
+    .docs-grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
   }
 
-  /* ── Fade in ── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .hero-text { animation: fadeUp 0.7s ease both; }
-  .hero-card { animation: fadeUp 0.7s 0.2s ease both; }
-  .section { animation: fadeUp 0.5s ease both; }
+  .hero-text   { animation: fadeUp 0.6s ease both; }
+  .status-card { animation: fadeUp 0.6s 0.15s ease both; }
 </style>
 </head>
 <body>
 
+<!-- MASTHEAD -->
 <header class="masthead">
   <div class="masthead-inner">
-    <div class="masthead-wordmark">
-      <span>AMPERE</span> &nbsp;/&nbsp; Autonomous Databricks AI Engineer
+    <div class="masthead-left">
+      <div class="masthead-wordmark"><span>SPARK</span> &nbsp;/ DatabricksHub</div>
+      <div class="masthead-divider"></div>
+      <div class="masthead-subtitle">Knowledge Sharing &amp; Collaboration</div>
     </div>
     <div class="masthead-meta">
-      Last updated: March 14, 2026 at 09:53<br>
-      Powered by Groq Llama 3.3 &nbsp;|&nbsp; Databricks Community Edition
+      Updated: March 14, 2026 &nbsp;|&nbsp; Daily 06:00 &nbsp;|&nbsp; Groq Llama 3.3 &nbsp;|&nbsp; Databricks SQL Warehouse
     </div>
   </div>
 </header>
 
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#agents">How It Works</a>
+    <a href="#projects">Projects</a>
+    <a href="#feeds">Knowledge Feeds</a>
+    <a href="#docs">Documentation</a>
+  </div>
+</nav>
+
 <main>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-text">
-      <div class="hero-eyebrow">AMPLab, UC Berkeley &times; Databricks</div>
-      <h1 class="hero-title">Meet AMPERE.</h1>
-      <div class="hero-subtitle">Autonomous Multi-agent Project Engine for Research &amp; Exploration</div>
-      <p class="hero-lead">
-        Built so one engineer could stop drowning in Databricks release notes
-        and start actually <em>doing something useful</em> with them.
-        AMPERE wakes up every morning at 6 AM, reads the internet,
-        picks a Databricks feature, writes a notebook, runs it, validates it,
-        and publishes it. All before you finish your first coffee.
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Self-governing Platform for Automated Research and Knowledge</div>
+    <h1 class="hero-title">Meet SPARK.</h1>
+    <div class="hero-tagline">Autonomous Databricks AI Engineer &mdash; DatabricksHub</div>
+    <p class="hero-lead">
+      Databricks ships features faster than any one person can track. SPARK was built for
+      the curious practitioner who wants to <em>keep learning</em> without losing hours to
+      release notes — and who believes that knowledge is most valuable when it is
+      <em>shared, documented, and reproducible</em>.
+    </p>
+    <p class="hero-lead" style="margin-top: 14px;">
+      Every morning at 6 AM, SPARK reads across 28 sources, selects a Databricks feature
+      worth exploring, writes a working notebook, runs it on a live SQL Warehouse, validates
+      the output, publishes it to GitHub, and updates this portal. The team gains a growing,
+      searchable library of hands-on demonstrations — built automatically, ready to fork and extend.
+    </p>
+  </div>
+  <div class="status-card">
+    <div class="status-card-title">System Status</div>
+    <div class="stat"><span>Agent</span><span class="stat-val">SPARK v1.0</span></div>
+    <div class="stat"><span>Supervisor</span><span class="stat-val">Active</span></div>
+    <div class="stat"><span>Projects run</span><span class="stat-val">1</span></div>
+    <div class="stat"><span>Schedule</span><span class="stat-val">Daily 06:00</span></div>
+    <div class="stat"><span>LLM</span><span class="stat-val">Llama 3.3 70B</span></div>
+    <div class="stat"><span>Warehouse</span><span class="stat-val">SQL (Community)</span></div>
+    <div class="stat"><span>Publisher</span><span class="stat-val">GitHub</span></div>
+    <div class="stat"><span>Sources</span><span class="stat-val">28 feeds</span></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="agents">
+  <div class="intro-grid">
+
+    <div class="intro-body">
+      <h2 class="section-title">Built for Anyone Who Wants to Keep Learning</h2>
+      <p>
+        Keeping pace with a platform that evolves as rapidly as Databricks demands
+        constant attention. New features land weekly — Delta Lake, MLflow, Unity Catalog,
+        Liquid Clustering, Serverless Compute, Mosaic AI. Each one worth exploring.
+        Rarely enough hours to explore any of them properly.
+      </p>
+      <div class="pull-quote">
+        "What if the research, the notebook, and the write-up happened automatically — so the
+        team could spend time learning from results rather than producing them?"
+      </div>
+      <p>
+        SPARK turns that question into a daily practice. A <strong>Supervisor Agent</strong>
+        orchestrates six specialised agents in sequence. Each reads from the previous,
+        adds its contribution, and passes a shared context forward. If any step fails,
+        the pipeline halts and reports precisely why.
+      </p>
+      <p>
+        Every successful run produces a validated, committed, documented Databricks notebook —
+        ready for the whole team to read, run, and build on. Knowledge is created once
+        and shared openly. That is the point.
       </p>
     </div>
-    <div class="hero-card">
-      <div class="hero-card-title">System Status</div>
-      <div class="stat"><span>Agent</span><span class="stat-val">AMPERE v1.0</span></div>
-      <div class="stat"><span>Supervisor</span><span class="stat-val">Active</span></div>
-      <div class="stat"><span>Projects run</span><span class="stat-val">1</span></div>
-      <div class="stat"><span>Schedule</span><span class="stat-val">Daily 06:00</span></div>
-      <div class="stat"><span>LLM</span><span class="stat-val">Llama 3.3 70B</span></div>
-      <div class="stat"><span>Warehouse</span><span class="stat-val">SQL (Community)</span></div>
-      <div class="stat"><span>Topics covered</span><span class="stat-val">MCP...</span></div>
+
+    <div>
+      <h2 class="section-title">The Six-Agent Pipeline</h2>
+      <div class="agent-flow">
+
+        <div class="agent-node">
+          <div class="agent-connector">
+            <div class="agent-num">01</div>
+            <div class="agent-line"></div>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">Knowledge Agent</div>
+            <div class="agent-desc">Scrapes 28 sources — official docs, Stack Overflow, Reddit, Medium, Hacker News, LinkedIn, and Google News — collecting relevant articles each morning.</div>
+            <div class="agent-output">Output: articles[]</div>
+          </div>
+        </div>
+
+        <div class="agent-node">
+          <div class="agent-connector">
+            <div class="agent-num">02</div>
+            <div class="agent-line"></div>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">Feature Analyser</div>
+            <div class="agent-desc">Reviews collected articles and selects the most compelling Databricks feature to demonstrate next, avoiding topics already covered in previous runs.</div>
+            <div class="agent-output">Output: feature, description, project_idea, tags</div>
+          </div>
+        </div>
+
+        <div class="agent-node">
+          <div class="agent-connector">
+            <div class="agent-num">03</div>
+            <div class="agent-line"></div>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">Project Generator</div>
+            <div class="agent-desc">Generates a Databricks SQL notebook, companion queries, and a README — saved under a dated project schema in the format YYYYMMDD_feature.</div>
+            <div class="agent-output">Output: notebook.py, queries.sql, README.md</div>
+          </div>
+        </div>
+
+        <div class="agent-node">
+          <div class="agent-connector">
+            <div class="agent-num">04</div>
+            <div class="agent-line"></div>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">Databricks Executor</div>
+            <div class="agent-desc">Uploads the notebook, classifies each cell using the LLM, converts Python cells to SQL for the Warehouse, executes all cells, and retries any that fail with an auto-generated fix.</div>
+            <div class="agent-output">Output: run_state, run_output, notebook_url</div>
+          </div>
+        </div>
+
+        <div class="agent-node">
+          <div class="agent-connector">
+            <div class="agent-num">05</div>
+            <div class="agent-line"></div>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">Validation Agent</div>
+            <div class="agent-desc">Analyses execution output and scores the demo from 1 to 10. Errors resolved during retry are not penalised. A minimum score of 7 is required to proceed to publication.</div>
+            <div class="agent-output">Output: quality_score, validated, issues[]</div>
+          </div>
+        </div>
+
+        <div class="agent-node">
+          <div class="agent-connector">
+            <div class="agent-num">06</div>
+            <div class="agent-line"></div>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">Publisher Agent</div>
+            <div class="agent-desc">Commits the project to the DatabricksHub GitHub repository and updates this knowledge portal with a new entry in the daily projects table.</div>
+            <div class="agent-output">Output: github_url, commit_sha</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- ORIGIN STORY -->
-  <section class="section">
-    <div class="section-label">Origin</div>
-    <div class="narrative">
-      <div>
-        <h2 class="section-title">The Problem with Being One Person</h2>
-        <p>
-          <strong>BG</strong> is a data engineer. A good one. But Databricks ships features
-          the way a Golden Retriever chases tennis balls: relentlessly, enthusiastically,
-          and without any regard for whether you have had time to process the last one.
-        </p>
-        <p>
-          Delta Lake got time travel. MLflow got a model registry. Unity Catalog appeared
-          seemingly overnight. Liquid Clustering replaced Z-ORDER. Every week, something new.
-          Every week, BG meant to spin up a notebook and try it. Every week, real work got
-          in the way.
-        </p>
-        <div class="pull-quote">
-          "I will try it this weekend." — BG, every Friday, for eighteen months.
-        </div>
-        <p>
-          Then BG had an idea. Not a weekend-project idea. A <strong>proper</strong> idea.
-          What if, instead of BG keeping up with Databricks, something else did it for him?
-          Something tireless. Something that did not have meetings. Something named after
-          the laboratory at UC Berkeley where Apache Spark itself was born.
-        </p>
-        <p>
-          So AMPERE was built: a supervisor orchestrating six specialised agents, each with
-          one job, working in sequence every morning. BG now opens his laptop to find a
-          finished, validated, published demo waiting for him. Sometimes he even reads it.
-        </p>
-      </div>
-      <div>
-        <h2 class="section-title">A Word from the Agents</h2>
-        <p>
-          <strong>Supervisor Agent</strong> here. My role is to coordinate the other five,
-          pass context between them, and decide whether the final output meets the bar for
-          publication. I am, frankly, management. I attend no meetings, produce no Jira tickets,
-          and have never once said "let's take this offline."
-        </p>
-        <p>
-          The rest of AMPERE is more hands-on. We have a <strong>Knowledge Agent</strong>
-          who reads everything — blogs, Stack Overflow, Reddit, Hacker News, LinkedIn —
-          so you do not have to. A <strong>Feature Analyser</strong> that decides what is
-          worth building. A <strong>Project Generator</strong> that writes the actual notebooks.
-          A <strong>Databricks Executor</strong> who runs them on a live SQL Warehouse.
-          A <strong>Validation Agent</strong> who refuses to ship anything below a 7.
-          And a <strong>Publisher</strong> who puts it all on GitHub.
-        </p>
-        <p>
-          We do in eleven minutes what BG estimated would take him a Saturday afternoon
-          (which, historically, he would spend watching cricket instead).
-        </p>
-      </div>
-    </div>
-  </section>
+<!-- DAILY PROJECTS (full width) -->
+<section class="section" id="projects">
+  <h2 class="section-title">Daily Projects</h2>
+  <p style="font-family:var(--sans);font-size:13px;color:var(--muted);max-width:720px;line-height:1.7;margin-bottom:4px;text-align:left;">
+    Each entry is a validated, committed Databricks notebook exploring a specific platform feature.
+    Schemas follow the convention
+    <code style="font-family:var(--mono);font-size:11px;background:#e8e4da;padding:1px 6px;">daily_projects.YYYYMMDD_feature</code>.
+    All notebooks are available on GitHub for the team to review and reuse.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Feature</th>
+          <th>Project</th>
+          <th>Schema</th>
+          <th>Notebook</th>
+          <th>GitHub</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date-col">2026-03-14</td>
+          <td class="feature-col">MCP</td>
+          <td class="project-col">Building a recommender system using MCP and Databricks</td>
+          <td class="schema-col">daily_projects.20260314_mcp</td>
+          <td><a class="table-link" href="https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor" target="_blank">Notebook</a></td>
+          <td><a class="table-link" href="https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp" target="_blank">README</a></td>
+          <td><span class="badge">10/10</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-  <!-- PIPELINE -->
-  <section class="section">
-    <div class="section-label">Architecture</div>
-    <h2 class="section-title">The Six-Agent Pipeline</h2>
-    <div class="pipeline">
-      <div class="pipe-step">
-        <span class="pipe-step-num">01</span>
-        <div class="pipe-step-name">Knowledge<br>Agent</div>
-      </div>
-      <div class="pipe-step">
-        <span class="pipe-step-num">02</span>
-        <div class="pipe-step-name">Feature<br>Analyser</div>
-      </div>
-      <div class="pipe-step">
-        <span class="pipe-step-num">03</span>
-        <div class="pipe-step-name">Project<br>Generator</div>
-      </div>
-      <div class="pipe-step">
-        <span class="pipe-step-num">04</span>
-        <div class="pipe-step-name">Databricks<br>Executor</div>
-      </div>
-      <div class="pipe-step">
-        <span class="pipe-step-num">05</span>
-        <div class="pipe-step-name">Validation<br>Agent</div>
-      </div>
-      <div class="pipe-step">
-        <span class="pipe-step-num">06</span>
-        <div class="pipe-step-name">Publisher<br>Agent</div>
-      </div>
-    </div>
-    <p style="font-family:var(--sans);font-size:14px;color:#555;max-width:720px;margin-top:20px;line-height:1.7;">
-      Each agent receives a shared context dictionary from the Supervisor, adds its outputs to it,
-      and passes it forward. If any agent fails, the pipeline halts and reports the failure reason.
-      A successful run ends with a committed notebook on GitHub and an updated schema in
-      <code style="font-family:var(--mono);font-size:12px;background:#e8e4da;padding:2px 6px;">daily_projects.YYYYMMDD_feature</code>
-      on the SQL Warehouse.
-    </p>
-  </section>
+<!-- KNOWLEDGE FEEDS (below projects, full width) -->
+<section class="section" id="feeds">
+  <h2 class="section-title">Where SPARK Reads</h2>
+  <p style="font-family:var(--sans);font-size:13px;color:var(--muted);max-width:680px;line-height:1.7;text-align:left;">
+    Every morning the Knowledge Agent reads from the following sources before selecting a feature to build.
+    Sources span official documentation, developer communities, publications, and social channels.
+  </p>
+  <div class="feeds-cats">
 
-  <!-- PROJECTS TABLE -->
-  <section class="section">
-    <div class="section-label">Output</div>
-    <h2 class="section-title">Daily Projects</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Feature</th>
-            <th>Project</th>
-            <th>Schema</th>
-            <th>Notebook</th>
-            <th>GitHub</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="date-col">2026-03-14</td><td class="feature-col">MCP</td><td class="project-col">Building a recommender system using MCP and Databricks</td><td class="schema-col">daily_projects.20260314_mcp</td><td><a class="table-link" href="https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor" target="_blank">Notebook</a></td><td><a class="table-link" href="https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260314-mcp" target="_blank">README</a></td><td><span class="badge">10/10</span></td></tr>
-        </tbody>
-      </table>
+    <div>
+      <div class="feeds-cat-title">Official Databricks</div>
+      <a class="feed-link" href="https://www.databricks.com/blog" target="_blank">Databricks Blog</a>
+      <a class="feed-link" href="https://www.databricks.com/feed" target="_blank">Databricks Blog RSS</a>
+      <a class="feed-link" href="https://docs.databricks.com/release-notes/" target="_blank">Release Notes</a>
+      <a class="feed-link" href="https://community.databricks.com/" target="_blank">Databricks Community</a>
+      <a class="feed-link" href="https://community.databricks.com/t5/technical-blog/rss/board" target="_blank">Community Technical Blog RSS</a>
+      <a class="feed-link" href="https://www.databricks.com/solutions" target="_blank">Databricks Solutions</a>
     </div>
-  </section>
 
-  <!-- FEEDS -->
-  <section class="section">
-    <div class="section-label">Knowledge Sources</div>
-    <h2 class="section-title">Where AMPERE Reads</h2>
-    <p style="font-family:var(--sans);font-size:14px;color:#555;margin-bottom:24px;max-width:640px;">
-      Every morning the Knowledge Agent scrapes and reads from the following sources before
-      deciding what to build. No source is trusted unconditionally. All are read sceptically.
-    </p>
-    <div class="feeds-grid">
-      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://www.databricks.com/blog" target="_blank">databricks.com</a></span></div>
-      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://docs.databricks.com/release-notes/" target="_blank">docs.databricks.com</a></span></div>
-      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://community.databricks.com/" target="_blank">community.databricks.com</a></span></div>
-      <div class="feed-item"><span class="feed-type">Official</span><span class="feed-name"><a href="https://www.databricks.com/solutions" target="_blank">databricks.com</a></span></div>
-      <div class="feed-item"><span class="feed-type">Stack Overflow</span><span class="feed-name"><a href="https://stackoverflow.com/questions/tagged/databricks" target="_blank">databricks</a></span></div>
-      <div class="feed-item"><span class="feed-type">Stack Overflow</span><span class="feed-name"><a href="https://stackoverflow.com/questions/tagged/apache-spark+databricks" target="_blank">apache-spark + databricks</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.databricks.com/feed" target="_blank">Databricks Blog (Official)</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://community.databricks.com/t5/technical-blog/rss/board" target="_blank">Databricks Community Technical Blog</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.reddit.com/r/databricks/.rss" target="_blank">Reddit r/databricks</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.reddit.com/r/apachespark/.rss" target="_blank">Reddit r/apachespark</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.reddit.com/r/dataengineering/.rss" target="_blank">Reddit r/dataengineering</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://medium.com/feed/tag/databricks" target="_blank">Medium: #databricks</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://medium.com/feed/tag/apache-spark" target="_blank">Medium: #apache-spark</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://medium.com/feed/databricks" target="_blank">Medium: Databricks publication</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://www.dataengineeringweekly.com/feed" target="_blank">Data Engineering Weekly</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://towardsdatascience.com/feed" target="_blank">Towards Data Science</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://hnrss.org/newest?q=databricks&points=10" target="_blank">Hacker News: Databricks</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://hnrss.org/newest?q=delta+lake&points=10" target="_blank">Hacker News: Delta Lake</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://dev.to/feed/tag/databricks" target="_blank">Dev.to #databricks</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://dev.to/feed/tag/apachespark" target="_blank">Dev.to #apachespark</a></span></div>
-      <div class="feed-item"><span class="feed-type">RSS</span><span class="feed-name"><a href="https://rss.app/feed/AC7IAplgI5NhIp45" target="_blank">LinkedIn: Databricks Company Page</a></span></div>
-      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20site%3Alinkedin.com" target="_blank">Databricks site:linkedin.com</a></span></div>
-      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20new%20feature%20announcement" target="_blank">Databricks new feature announcement</a></span></div>
-      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20Delta%20Lake%20tutorial" target="_blank">Databricks Delta Lake tutorial</a></span></div>
-      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Apache%20Spark%20Databricks%20best%20practices" target="_blank">Apache Spark Databricks best practices</a></span></div>
-      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20Unity%20Catalog" target="_blank">Databricks Unity Catalog</a></span></div>
-      <div class="feed-item"><span class="feed-type">Google News</span><span class="feed-name"><a href="https://news.google.com/rss/search?q=Databricks%20MLflow%20machine%20learning" target="_blank">Databricks MLflow machine learning</a></span></div>
+    <div>
+      <div class="feeds-cat-title">Developer Community</div>
+      <a class="feed-link" href="https://stackoverflow.com/questions/tagged/databricks" target="_blank">Stack Overflow: databricks</a>
+      <a class="feed-link" href="https://stackoverflow.com/questions/tagged/apache-spark+databricks" target="_blank">Stack Overflow: apache-spark + databricks</a>
+      <a class="feed-link" href="https://www.reddit.com/r/databricks/.rss" target="_blank">Reddit r/databricks</a>
+      <a class="feed-link" href="https://www.reddit.com/r/apachespark/.rss" target="_blank">Reddit r/apachespark</a>
+      <a class="feed-link" href="https://www.reddit.com/r/dataengineering/.rss" target="_blank">Reddit r/dataengineering</a>
+      <a class="feed-link" href="https://hnrss.org/newest?q=databricks&points=10" target="_blank">Hacker News: Databricks</a>
+      <a class="feed-link" href="https://hnrss.org/newest?q=delta+lake&points=10" target="_blank">Hacker News: Delta Lake</a>
+      <a class="feed-link" href="https://dev.to/feed/tag/databricks" target="_blank">Dev.to: #databricks</a>
+      <a class="feed-link" href="https://dev.to/feed/tag/apachespark" target="_blank">Dev.to: #apachespark</a>
     </div>
-  </section>
+
+    <div>
+      <div class="feeds-cat-title">Articles &amp; Publications</div>
+      <a class="feed-link" href="https://medium.com/feed/tag/databricks" target="_blank">Medium: #databricks</a>
+      <a class="feed-link" href="https://medium.com/feed/tag/apache-spark" target="_blank">Medium: #apache-spark</a>
+      <a class="feed-link" href="https://medium.com/feed/databricks" target="_blank">Medium: Databricks publication</a>
+      <a class="feed-link" href="https://towardsdatascience.com/feed" target="_blank">Towards Data Science</a>
+      <a class="feed-link" href="https://www.dataengineeringweekly.com/feed" target="_blank">Data Engineering Weekly</a>
+    </div>
+
+    <div>
+      <div class="feeds-cat-title">LinkedIn &amp; Google News</div>
+      <a class="feed-link" href="https://rss.app/feed/AC7IAplgI5NhIp45" target="_blank">LinkedIn: Databricks Company Page</a>
+      <a class="feed-link" href="https://news.google.com/rss/search?q=Databricks+site:linkedin.com" target="_blank">Google News: Databricks on LinkedIn</a>
+      <a class="feed-link" href="https://news.google.com/rss/search?q=Databricks+new+feature+announcement" target="_blank">Google News: Feature Announcements</a>
+      <a class="feed-link" href="https://news.google.com/rss/search?q=Databricks+Delta+Lake+tutorial" target="_blank">Google News: Delta Lake Tutorials</a>
+      <a class="feed-link" href="https://news.google.com/rss/search?q=Databricks+Unity+Catalog" target="_blank">Google News: Unity Catalog</a>
+      <a class="feed-link" href="https://news.google.com/rss/search?q=Databricks+MLflow+machine+learning" target="_blank">Google News: MLflow</a>
+      <a class="feed-link" href="https://news.google.com/rss/search?q=Apache+Spark+Databricks+best+practices" target="_blank">Google News: Spark Best Practices</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- DOCUMENTATION -->
+<section class="section" id="docs">
+  <h2 class="section-title">Databricks Documentation</h2>
+  <p style="font-family:var(--sans);font-size:13px;color:var(--muted);max-width:680px;line-height:1.7;text-align:left;">
+    Canonical reference material for the Databricks platform — documentation, release notes,
+    architecture guides, API reference, blogs, and research.
+  </p>
+  <div class="docs-grid">
+
+    <div class="doc-card">
+      <div class="doc-cat">Getting Started</div>
+      <a class="doc-link" href="https://docs.databricks.com/" target="_blank">Databricks Documentation</a>
+      <div class="doc-desc">Entry point for all platform documentation across AWS, Azure, and GCP.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Release Notes</div>
+      <a class="doc-link" href="https://docs.databricks.com/release-notes/product/index.html" target="_blank">Platform Release Notes</a>
+      <div class="doc-desc">New features, deprecations, and fixes by platform release.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Release Notes</div>
+      <a class="doc-link" href="https://docs.databricks.com/sql/release-notes/index.html" target="_blank">Databricks SQL Release Notes</a>
+      <div class="doc-desc">SQL warehouse and serverless SQL updates by version.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Release Notes</div>
+      <a class="doc-link" href="https://docs.databricks.com/release-notes/runtime/index.html" target="_blank">Databricks Runtime Release Notes</a>
+      <div class="doc-desc">DBR version history including Spark, Python, and library versions.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Architecture</div>
+      <a class="doc-link" href="https://docs.databricks.com/lakehouse/index.html" target="_blank">Lakehouse Architecture</a>
+      <div class="doc-desc">Delta Lake, Unity Catalog, and the Medallion architecture explained.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Architecture</div>
+      <a class="doc-link" href="https://docs.databricks.com/data-governance/unity-catalog/index.html" target="_blank">Unity Catalog</a>
+      <div class="doc-desc">Unified governance — schemas, tables, lineage, and access controls.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Delta Lake</div>
+      <a class="doc-link" href="https://docs.databricks.com/delta/index.html" target="_blank">Delta Lake Guide</a>
+      <div class="doc-desc">ACID transactions, time travel, schema evolution, MERGE, OPTIMIZE.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Delta Lake</div>
+      <a class="doc-link" href="https://delta.io/" target="_blank">Delta Lake Open Source</a>
+      <div class="doc-desc">Protocol specification and community resources for open-source Delta.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Machine Learning</div>
+      <a class="doc-link" href="https://mlflow.org/docs/latest/index.html" target="_blank">MLflow Documentation</a>
+      <div class="doc-desc">Experiment tracking, model registry, model serving, and the MLflow API.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Machine Learning</div>
+      <a class="doc-link" href="https://docs.databricks.com/machine-learning/index.html" target="_blank">Databricks ML Guide</a>
+      <div class="doc-desc">AutoML, feature store, model serving, and Mosaic AI on Databricks.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Streaming</div>
+      <a class="doc-link" href="https://docs.databricks.com/structured-streaming/index.html" target="_blank">Structured Streaming</a>
+      <div class="doc-desc">Real-time data processing with Spark Structured Streaming on Databricks.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Developer</div>
+      <a class="doc-link" href="https://docs.databricks.com/dev-tools/api/index.html" target="_blank">REST API Reference</a>
+      <div class="doc-desc">Jobs, clusters, workspace, SQL statements, and all Databricks REST APIs.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Developer</div>
+      <a class="doc-link" href="https://docs.databricks.com/dev-tools/databricks-connect.html" target="_blank">Databricks Connect</a>
+      <div class="doc-desc">Run Spark code locally against a remote Databricks cluster from any IDE.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Developer</div>
+      <a class="doc-link" href="https://docs.databricks.com/dev-tools/bundles/index.html" target="_blank">Databricks Asset Bundles</a>
+      <div class="doc-desc">CI/CD for Databricks — deploy jobs, notebooks, and pipelines as code.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Blog</div>
+      <a class="doc-link" href="https://www.databricks.com/blog/category/engineering" target="_blank">Engineering Blog</a>
+      <div class="doc-desc">Deep technical articles from the Databricks engineering team.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Blog</div>
+      <a class="doc-link" href="https://www.databricks.com/blog/category/company" target="_blank">Company Blog</a>
+      <div class="doc-desc">Product announcements, partner news, and strategic direction.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Research</div>
+      <a class="doc-link" href="https://www.databricks.com/research" target="_blank">Databricks Research</a>
+      <div class="doc-desc">Published papers from the Databricks and Mosaic AI research teams.</div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-cat">Community</div>
+      <a class="doc-link" href="https://community.databricks.com/" target="_blank">Databricks Community</a>
+      <div class="doc-desc">Q&amp;A, technical blogs, and peer discussion across the user community.</div>
+    </div>
+
+  </div>
+</section>
 
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div>
-      AMPERE &mdash; Named in honour of AMPLab, UC Berkeley, birthplace of Apache Spark (2009)
-    </div>
-    <div>
-      Dedicated to BG, who invented a system rather than spend another Saturday reading release notes
-    </div>
+    <div>SPARK &mdash; DatabricksHub Knowledge Portal &mdash; Autonomous Databricks AI Engineer</div>
+    <div>Built for anyone who wants to keep learning and share knowledge simply</div>
     <div>
       Updated automatically every day at 06:00 &nbsp;|&nbsp;
       <a href="https://github.com/DatabricksHub/databricks-daily-ai-engineer" target="_blank">GitHub</a>
