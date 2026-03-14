@@ -4,3 +4,4 @@
 |------|---------|------|---------|-----|
 | 20260313 | **Generative AI** | Building a text classification model using Databricks' Generative AI capabilities to classify customer feedback | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
 | 20260313 | **UC Python UDF** | Building a data pipeline with custom data validation using UC Python UDF | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
+| 20260314 | **Agent Bricks** | Building a chatbot using Agent Bricks and MCP to demonstrate AI-driven customer support | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
