@@ -142,7 +142,7 @@ class PageGeneratorAgent(BaseAgent):
     line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 6px; }}
   .hero-tagline {{ font-family: var(--mono); font-size: 12px; color: var(--gold);
     letter-spacing: 0.1em; margin-bottom: 24px; }}
-  .hero-lead {{ font-size: 16px; line-height: 1.8; color: #3a3a3a; max-width: 580px; }}
+  .hero-lead {{ font-family: var(--sans); font-size: 15px; line-height: 1.85; color: #3a3a3a; max-width: 580px; }}
   .hero-lead + .hero-lead {{ margin-top: 12px; }}
   .hero-lead em {{ font-style: italic; color: var(--steel); }}
 
@@ -266,6 +266,50 @@ class PageGeneratorAgent(BaseAgent):
   }}
   .hero-text   {{ animation: fadeUp 0.6s ease both; }}
   .status-card {{ animation: fadeUp 0.6s 0.15s ease both; }}
+
+  /* Section descriptions */
+  .section-desc {{
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.85;
+    color: #3a3a3a;
+    max-width: 720px;
+    margin-bottom: 4px;
+    text-align: left;
+  }}
+
+  /* Roadmap */
+  .roadmap-grid {{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    margin-top: 40px; border: 1px solid var(--rule); }}
+  .roadmap-card {{ padding: 28px 22px 24px; border-right: 1px solid var(--rule);
+    transition: background 0.15s; }}
+  .roadmap-card:last-child {{ border-right: none; }}
+  .roadmap-card:hover {{ background: #ede9df; }}
+  .roadmap-version {{ font-family: var(--mono); font-size: 11px; font-weight: 500;
+    color: var(--paper); background: var(--steel); display: inline-block;
+    padding: 3px 10px; margin-bottom: 12px; letter-spacing: 0.1em; }}
+  .roadmap-card.current .roadmap-version {{ background: var(--accent); }}
+  .roadmap-card.future-near .roadmap-version {{ background: var(--gold); color: var(--ink); }}
+  .roadmap-theme {{ font-family: var(--sans); font-size: 14px; font-weight: 700;
+    color: var(--ink); margin-bottom: 8px; line-height: 1.3; }}
+  .roadmap-tagline {{ font-family: var(--mono); font-size: 10px; color: var(--accent);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }}
+  .roadmap-agents {{ font-family: var(--mono); font-size: 10px; color: var(--gold); margin-bottom: 12px; }}
+  .roadmap-features {{ list-style: none; margin: 0; padding: 0; }}
+  .roadmap-features li {{ font-family: var(--sans); font-size: 11px; color: var(--muted);
+    padding: 3px 0; border-bottom: 1px solid #ede9df; line-height: 1.4; }}
+  .roadmap-features li:last-child {{ border-bottom: none; }}
+  .roadmap-endstate {{ font-family: var(--serif); font-size: 12px; font-style: italic;
+    color: var(--steel); margin-top: 14px; line-height: 1.6;
+    border-top: 1px solid var(--rule); padding-top: 12px; }}
+  @media (max-width: 960px) {{
+    .roadmap-grid {{ grid-template-columns: repeat(2, 1fr); }}
+    .roadmap-card {{ border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }}
+  }}
+  @media (max-width: 600px) {{
+    .roadmap-grid {{ grid-template-columns: 1fr; }}
+    .roadmap-card {{ border-right: none; }}
+  }}
 </style>
 </head>
 <body>
@@ -291,6 +335,7 @@ class PageGeneratorAgent(BaseAgent):
     <a href="#projects">Projects</a>
     <a href="#feeds">Knowledge Feeds</a>
     <a href="#docs">Documentation</a>
+    <a href="#roadmap">Roadmap</a>
   </div>
 </nav>
 
@@ -298,20 +343,30 @@ class PageGeneratorAgent(BaseAgent):
 
 <div class="hero" id="about">
   <div class="hero-text">
-    <div class="hero-eyebrow">Self-governing Platform for Automated Research and Knowledge</div>
-    <h1 class="hero-title">Meet SPARK.</h1>
-    <div class="hero-tagline">Autonomous Databricks AI Engineer &mdash; DatabricksHub</div>
+    <div class="hero-eyebrow">SPARK &mdash; Self-governing Platform for Automated Research and Knowledge</div>
+    <h1 class="hero-title">SPARK 1.0</h1>
+    <div class="hero-tagline">Autonomous Databricks AI Engineer &mdash; DatabricksHub Knowledge Portal</div>
     <p class="hero-lead">
-      Databricks ships features faster than any one person can track. SPARK was built for
-      the curious practitioner who wants to <em>keep learning</em> without losing hours to
-      release notes &mdash; and who believes that knowledge is most valuable when it is
-      <em>shared, documented, and reproducible</em>.
+      Databricks was founded with a mission to <em>democratize data and AI</em> &mdash; to make
+      advanced data and AI capabilities accessible to every practitioner, regardless of background
+      or resources. SPARK 1.0 carries that same philosophy into learning: <em>democratize knowledge
+      itself</em>. Every insight automated, every demonstration documented, every discovery shared
+      openly so the whole team advances together.
     </p>
     <p class="hero-lead" style="margin-top:14px;">
-      Every morning at 6 AM, SPARK reads across 28 sources, selects a Databricks feature
-      worth exploring, writes a working notebook, runs it on a live SQL Warehouse, validates
-      the output, publishes it to GitHub, and updates this portal. The team gains a growing,
-      searchable library of hands-on demonstrations &mdash; built automatically, ready to fork and extend.
+      New capabilities land continuously &mdash; Lakeflow Pipelines, Lakebase, Genie Code,
+      ZeroBus, AI/BI Dashboards, Databricks Apps, Serverless Compute, and more.
+      Each one worth exploring. Rarely enough hours to explore any of them properly.
+      To explore Databricks hands-on, a <em>free Community Edition account</em> is sufficient &mdash;
+      no credit card, no cloud subscription required. Detailed documentation, architecture guides,
+      release notes, and reference links are provided in this portal to support every step of the
+      journey.
+    </p>
+    <p class="hero-lead" style="margin-top:14px;">
+      SPARK 1.0 fixes the time problem: every morning at 6 AM the Supervisor Agent wakes up,
+      reads across 28 sources, selects the most relevant Databricks feature, writes a working
+      notebook, runs it on a live SQL Warehouse, validates it, and publishes it &mdash; building
+      a growing, searchable knowledge portal automatically.
     </p>
   </div>
   <div class="status-card">
@@ -333,8 +388,9 @@ class PageGeneratorAgent(BaseAgent):
       <h2 class="section-title">Built for Anyone Who Wants to Keep Learning</h2>
       <p>
         Keeping pace with a platform that evolves as rapidly as Databricks demands
-        constant attention. New features land weekly &mdash; Delta Lake, MLflow, Unity Catalog,
-        Liquid Clustering, Serverless Compute, Mosaic AI. Each one worth exploring.
+        constant attention. New capabilities ship continuously &mdash; Lakeflow Pipelines,
+        Lakebase, Genie Code, ZeroBus, AI/BI Dashboards, Databricks Apps, Unity Catalog,
+        Serverless Compute, Mosaic AI. Each one worth exploring.
         Rarely enough hours to explore any of them properly.
       </p>
       <div class="pull-quote">
@@ -342,7 +398,7 @@ class PageGeneratorAgent(BaseAgent):
         team could spend time learning from results rather than producing them?"
       </div>
       <p>
-        SPARK turns that question into a daily practice. A <strong>Supervisor Agent</strong>
+        SPARK 1.0 turns that question into a daily practice. A <strong>Supervisor Agent</strong>
         orchestrates six specialised agents in sequence. Each reads from the previous,
         adds its contribution, and passes a shared context forward. If any step fails,
         the pipeline halts and reports precisely why.
@@ -411,7 +467,7 @@ class PageGeneratorAgent(BaseAgent):
 
 <section class="section" id="projects">
   <h2 class="section-title">Daily Projects</h2>
-  <p style="font-family:var(--sans);font-size:13px;color:var(--muted);max-width:720px;line-height:1.7;margin:0 auto 4px;text-align:left;">
+  <p class="section-desc">
     Each entry is a validated, committed Databricks notebook exploring a specific platform feature.
     Schemas follow the convention
     <code style="font-family:var(--mono);font-size:11px;background:#e8e4da;padding:1px 6px;">daily_projects.YYYYMMDD_feature</code>.
@@ -433,8 +489,8 @@ class PageGeneratorAgent(BaseAgent):
 </section>
 
 <section class="section" id="feeds">
-  <h2 class="section-title">Where SPARK Reads</h2>
-  <p style="font-family:var(--sans);font-size:13px;color:var(--muted);max-width:680px;line-height:1.7;margin:0 auto;text-align:left;">
+  <h2 class="section-title">Where SPARK 1.0 Reads</h2>
+  <p class="section-desc">
     Every morning the Knowledge Agent reads from the following sources before selecting a feature to build.
     Sources span official documentation, developer communities, publications, and social channels.
   </p>
@@ -445,7 +501,7 @@ class PageGeneratorAgent(BaseAgent):
 
 <section class="section" id="docs">
   <h2 class="section-title">Databricks Documentation</h2>
-  <p style="font-family:var(--sans);font-size:13px;color:var(--muted);max-width:680px;line-height:1.7;margin:0 auto;text-align:left;">
+  <p class="section-desc">
     Canonical reference material for the Databricks platform &mdash; documentation, release notes,
     architecture guides, API reference, blogs, and research.
   </p>
@@ -506,6 +562,98 @@ class PageGeneratorAgent(BaseAgent):
       <div class="doc-desc">Q&amp;A, technical blogs, and peer discussion across the user community.</div></div>
   </div>
 </section>
+
+<section class="section" id="roadmap">
+  <h2 class="section-title">The Road Ahead</h2>
+  <p class="section-desc">
+    SPARK 1.0 is designed to grow from a daily automation tool into a full learning and credentialing
+    platform. Each version adds a new layer of intelligence, moving practitioners from awareness
+    to mastery to champion-level recognition across every Databricks domain.
+  </p>
+  <div class="roadmap-grid">
+    <div class="roadmap-card current">
+      <div class="roadmap-version">v1.0 &mdash; Now</div>
+      <div class="roadmap-theme">Automate Discovery</div>
+      <div class="roadmap-tagline">Daily knowledge pipeline</div>
+      <div class="roadmap-agents">Agents 01 &ndash; 07</div>
+      <ul class="roadmap-features">
+        <li>Knowledge Agent reads 28 sources daily</li>
+        <li>Feature Analyser picks what to build</li>
+        <li>Project Generator writes SQL notebooks</li>
+        <li>Databricks Executor runs on SQL Warehouse</li>
+        <li>Validation Agent scores quality</li>
+        <li>Publisher Agent commits to GitHub</li>
+        <li>Page Generator updates this portal</li>
+      </ul>
+      <div class="roadmap-endstate">The Supervisor Agent runs every morning at 6 AM, orchestrating six agents to produce a validated, published Databricks demonstration &mdash; fully automatically.</div>
+    </div>
+    <div class="roadmap-card future-near">
+      <div class="roadmap-version">v2.0 &mdash; Next</div>
+      <div class="roadmap-theme">Structured Learning</div>
+      <div class="roadmap-tagline">Certification-driven</div>
+      <div class="roadmap-agents">Agents 08 &ndash; 15</div>
+      <ul class="roadmap-features">
+        <li>Curriculum Agent maps to exam objectives</li>
+        <li>Quiz Generator creates practice questions</li>
+        <li>Explainer Agent writes study guide articles</li>
+        <li>Difficulty Grader tags by cert level</li>
+        <li>Learning Path Agent sequences content</li>
+        <li>Flashcard Agent exports Anki decks</li>
+        <li>Progress Tracker reports weekly coverage</li>
+        <li>Covers Databricks &amp; Microsoft DP-203, DP-100, AI-102</li>
+      </ul>
+      <div class="roadmap-endstate">A systematic path to Databricks and Azure certification with daily automated practice.</div>
+    </div>
+    <div class="roadmap-card">
+      <div class="roadmap-version">v3.0</div>
+      <div class="roadmap-theme">Deep Research</div>
+      <div class="roadmap-tagline">Expert-level mastery</div>
+      <div class="roadmap-agents">Agents 16 &ndash; 21</div>
+      <ul class="roadmap-features">
+        <li>Research Paper Agent monitors arXiv &amp; Databricks Research</li>
+        <li>Architecture Agent produces reference designs</li>
+        <li>Anti-Pattern Agent shows what not to do</li>
+        <li>Benchmark Agent compares approaches with data</li>
+        <li>Interview Prep Agent generates scenario questions</li>
+        <li>Domain Specialist Agent covers industry verticals</li>
+        <li>Covers all five domains: Admin, DE, DS, DA, App Builder</li>
+      </ul>
+      <div class="roadmap-endstate">Production-grade knowledge depth across every Databricks domain and industry vertical.</div>
+    </div>
+    <div class="roadmap-card">
+      <div class="roadmap-version">v4.0</div>
+      <div class="roadmap-theme">Collaborative Intelligence</div>
+      <div class="roadmap-tagline">Team &amp; community</div>
+      <div class="roadmap-agents">Agents 22 &ndash; 26</div>
+      <ul class="roadmap-features">
+        <li>Peer Review Agent reviews team submissions</li>
+        <li>Trend Intelligence Agent tracks market skills</li>
+        <li>Team Progress Agent builds skills matrix</li>
+        <li>Challenge Agent posts weekly problems</li>
+        <li>Content Syndication Agent drafts external posts</li>
+        <li>Team dashboard on the portal</li>
+        <li>GitHub PR-based learning workflow</li>
+      </ul>
+      <div class="roadmap-endstate">A self-improving team knowledge platform where SPARK mentors as much as it creates.</div>
+    </div>
+    <div class="roadmap-card">
+      <div class="roadmap-version">v5.0</div>
+      <div class="roadmap-theme">Champion Platform</div>
+      <div class="roadmap-tagline">MVP &amp; Expert endgame</div>
+      <div class="roadmap-agents">Agents 27 &ndash; 29</div>
+      <ul class="roadmap-features">
+        <li>Portfolio Agent curates professional evidence</li>
+        <li>MVP Nomination Agent tracks programme criteria</li>
+        <li>Mentor Agent helps experts teach others</li>
+        <li>Full coverage: Platform Admin, Data Engineer, Data Scientist, Data Analyst, App Builder</li>
+        <li>Databricks MVP &amp; Microsoft MVP nomination support</li>
+        <li>Public knowledge portal as professional credential</li>
+      </ul>
+      <div class="roadmap-endstate">Recognised Databricks &amp; Microsoft MVP or Champion &mdash; with a documented, public record of expertise to prove it.</div>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
