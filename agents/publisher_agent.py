@@ -111,6 +111,25 @@ class PublisherAgent(BaseAgent):
             run_url=run_url,
         )
 
+        # ── Publish index.html (GitHub Pages portal) ───────────────────────────
+        index_local = Path("index.html")
+        if index_local.exists():
+            self.logger.info("Publishing index.html to GitHub Pages …")
+            try:
+                sha = self._get_file_sha("index.html")
+                html_content = base64.b64encode(index_local.read_bytes()).decode()
+                self._put_file(
+                    path="index.html",
+                    message=f"[SPARK] Update portal: {feature} ({date_str})",
+                    content=html_content,
+                    sha=sha,
+                )
+                self.logger.info("  index.html published successfully")
+            except Exception as e:
+                self.logger.warning(f"  index.html publish failed (non-fatal): {e}")
+        else:
+            self.logger.warning("  index.html not found locally — skipping portal update")
+
         commit_sha = commit_shas[-1]
         commit_url = (
             f"https://github.com/{cfg.github_repo}/commit/{commit_sha}"
