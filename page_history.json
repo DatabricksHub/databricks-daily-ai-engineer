@@ -1,5 +1,23 @@
 [
   {
+    "date": "20260315",
+    "feature": "Lakebase",
+    "project_idea": "Building a scalable data warehouse using Lakebase for real-time analytics and business insights",
+    "schema": "daily_projects.20260315_lakebase",
+    "notebook_url": "https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor",
+    "github_url": "",
+    "quality_score": 10
+  },
+  {
+    "date": "20260315",
+    "feature": "Python Data Source API",
+    "project_idea": "Building a custom data connector for a proprietary data format using the Python Data Source API",
+    "schema": "daily_projects.20260315_python_data_source_api",
+    "notebook_url": "https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor",
+    "github_url": "https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260315-python-data-source-api",
+    "quality_score": 10
+  },
+  {
     "date": "20260314",
     "feature": "MCP",
     "project_idea": "Building a recommender system using MCP and Databricks",
