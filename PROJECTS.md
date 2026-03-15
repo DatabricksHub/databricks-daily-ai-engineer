@@ -6,3 +6,4 @@
 | 20260313 | **UC Python UDF** | Building a data pipeline with custom data validation using UC Python UDF | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
 | 20260314 | **Agent Bricks** | Building a chatbot using Agent Bricks and MCP to demonstrate AI-driven customer support | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
 | 20260314 | **MCP** | Building a recommender system using MCP and Databricks | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
+| 20260315 | **Python Data Source API** | Building a custom data connector for a proprietary data format using the Python Data Source API | 10/10 | [view run](https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor) |
