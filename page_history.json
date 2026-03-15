@@ -1,6 +1,15 @@
 [
   {
     "date": "20260315",
+    "feature": "Delta Live Tables with MERGE",
+    "project_idea": "Retail inventory management with SCD Type 2 tracking, daily sales aggregation, and low-stock alerting using Delta MERGE and window functions, where data is ingested from multiple sources, transformed, and loaded into Delta Lake, and then used to generate reports and alerts for inventory management and sales analysis",
+    "schema": "daily_projects.20260315_delta_live_tables_with_merge",
+    "notebook_url": "https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor",
+    "github_url": "https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260315-delta_live_tables_with_merge",
+    "quality_score": 10
+  },
+  {
+    "date": "20260315",
     "feature": "Lakebase",
     "project_idea": "Building a scalable data warehouse using Lakebase for real-time analytics and business insights",
     "schema": "daily_projects.20260315_lakebase",
