@@ -1,5 +1,14 @@
 [
   {
+    "date": "20260317",
+    "feature": "Genie Code",
+    "project_idea": "E-commerce order pipeline with real-time inventory updates, SCD Type 2 tracking, and daily sales aggregation using Genie Code, Delta Lake, and SQL Warehouse, including window functions for time-based analysis and low-stock alerting using MERGE for upserts",
+    "schema": "daily_projects.20260317_genie_code",
+    "notebook_url": "https://dbc-e8ec7c3d-e1cb.cloud.databricks.com/sql/editor",
+    "github_url": "https://github.com/DatabricksHub/databricks-daily-ai-engineer/tree/main/projects/20260317-genie_code",
+    "quality_score": 10
+  },
+  {
     "date": "20260315",
     "feature": "Delta Live Tables with MERGE",
     "project_idea": "Retail inventory management with SCD Type 2 tracking, daily sales aggregation, and low-stock alerting using Delta MERGE and window functions, where data is ingested from multiple sources, transformed, and loaded into Delta Lake, and then used to generate reports and alerts for inventory management and sales analysis",
